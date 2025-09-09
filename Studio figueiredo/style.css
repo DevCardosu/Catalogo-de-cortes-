@@ -1,0 +1,393 @@
+/*
+ * style.css
+ * Cores: Tons de Preto e Cinza com detalhes em Dourado (#FFD700)
+ * Fonte: Poppins
+ */
+
+/* Reset básico e estilos globais */
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #121212; /* Fundo preto escuro */
+    color: #E0E0E0; /* Texto principal cinza claro */
+    line-height: 1.6;
+}
+
+/* --- Cabeçalho --- */
+.header {
+    background-color: #0A0A0A; /* Preto ainda mais escuro para o cabeçalho */
+    color: #FFFFFF;
+    text-align: center;
+    padding: 1.5rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    max-width: 150px;
+    height: auto;
+}
+
+.header h1 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: #FFD700;
+}
+
+.header p {
+    margin: 0;
+    font-weight: 300;
+    color: #BBBBBB; /* Subtítulo cinza médio */
+}
+
+/* --- Layout Principal --- */
+.container {
+    display: flex;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+/* --- Sidebar: QUAL ESTILO COMBINA COM VOCÊ? --- */
+.sidebar {
+    background-color: #1A1A1A; /* Fundo cinza escuro */
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Sombra mais visível */
+    flex-shrink: 0;
+    width: 350px;
+    height: fit-content; /* Garante que a altura se ajuste ao conteúdo */
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-top: 0;
+    color: #FFFFFF;
+    font-size: 1.8rem;
+    border-bottom: 2px solid #444444; /* Linha de divisão cinza escuro */
+    padding-bottom: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.estilo-opcao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #2A2A2A;
+    background-color: #252525;
+}
+
+.estilo-opcao:hover {
+    transform: scale(1.03);
+    background-color: #333333; /* Levemente mais claro no hover */
+    border-color: #FFD700;
+}
+
+.estilo-opcao img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 3px solid #FFD700;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.estilo-opcao span {
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #CCCCCC;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+/* --- Seções da Galeria (Inspire-se, Barbas, Riscos) --- */
+.main-content {
+    flex-grow: 1;
+}
+
+.secao {
+    background-color: #1A1A1A; /* Fundo cinza escuro para as seções */
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    margin-bottom: 2rem;
+}
+
+.secao h2 {
+    margin-top: 0;
+    color: #FFFFFF;
+    border-bottom: 2px solid #FFD700;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.item-galeria {
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.3s;
+    background-color: #252525;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.item-galeria:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    background-color: #333333;
+}
+
+.item-galeria img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.item-galeria span {
+    display: block;
+    margin-top: 0.75rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+/* --- Estilos do Modal (Pop-up) --- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    position: relative;
+    background-color: #1A1A1A;
+    padding: 0;
+    border-radius: 10px;
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.8);
+    width: auto;
+    max-width: 90%;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content h3 {
+    display: none;
+}
+
+.close-button {
+    color: #FFD700;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+    background-color: rgba(17, 17, 17, 0.7);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #FFFFFF;
+    background-color: #FFD700;
+    text-decoration: none;
+}
+
+.modal-galeria {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.modal-galeria img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    display: block;
+}
+
+/* --- Rodapé --- */
+.footer {
+    background-color: #0A0A0A;
+    color: #BBBBBB;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+.social-links a {
+    color: #FFD700;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.2s;
+}
+
+.social-links a:hover {
+    color: #FFFFFF;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .logo {
+        max-width: 120px;
+    }
+    .header h1 {
+        font-size: 2rem;
+    }
+    .header p {
+        font-size: 0.9rem;
+    }
+    .container {
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+    }
+    .sidebar {
+        width: 100%;
+        padding: 1.5rem;
+    }
+    .sidebar h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    .estilo-opcao {
+        justify-content: center;
+        margin-bottom: 1rem;
+        flex-direction: row;
+        gap: 1rem;
+    }
+    .estilo-opcao img {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 0;
+    }
+    .estilo-opcao span {
+        font-size: 0.9rem;
+    }
+    .galeria {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+    .item-galeria img {
+        height: 100px;
+    }
+    .footer-content {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 1.8rem;
+    }
+    .header p {
+        font-size: 0.8rem;
+    }
+    .logo {
+        max-width: 100px;
+    }
+    .secao {
+        padding: 1rem;
+    }
+    .galeria {
+        grid-template-columns: 1fr;
+    }
+    .item-galeria img {
+        height: 150px;
+    }
+    .modal-content {
+        padding: 0;
+    }
+    .modal-galeria {
+        grid-template-columns: 1fr;
+        padding: 5px;
+    }
+    .sidebar h2 {
+        font-size: 1.3rem;
+    }
+    .estilo-opcao span {
+        font-size: 0.85rem;
+    }
+    .estilo-opcao img {
+        width: 50px;
+        height: 50px;
+    }
+}
